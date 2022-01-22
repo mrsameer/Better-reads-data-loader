@@ -4,12 +4,20 @@ spring:
       keyspace-name: main
       username: jxBdKxaZuFvYnjktNSjSfyKN
       password: ikzm9-r-0_lPBWtxrMu6.LvflpyRaHiD0nA-2gMNl_O_cEyt1+ISWH4TgqxPz111Hp6A9EzCbXZe5Q,7f6bgbAsA8D9xZoJw0ZMtmeTb9-m-yj3QjKferYTLwL1qSc69
-      schema-action: create_if_not_exists
+      schema-action: recreate
       request:
         timeout: 10s
       connection:
         connect-timeout: 10s
         init-query-timeout: 10s
+  application:
+    name: betterreads-data-loader
+  main:
+    allow-circular-references: true
+
+datadump.location:
+  author: src/main/resources/test-authors.txt
+  works: src/main/resources/test-works.txt
 
 datastax.astra:
   secure-connect-bundle: secure-connect-betterreads.zip
